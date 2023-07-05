@@ -6,7 +6,7 @@ from passlib.context import CryptContext
 from pydantic import BaseModel
 
 # Define JWT settings
-SECRET_KEY = "//***adhi***//"
+SECRET_KEY = "your-secret-key"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 REFRESH_TOKEN_EXPIRE_DAYS = 7
@@ -24,4 +24,3 @@ def decode_access_token(token: str):
         return decoded_token
     except JWTError:
         raise HTTPException(status_code=401, detail="Invalid authentication credentials")
-
